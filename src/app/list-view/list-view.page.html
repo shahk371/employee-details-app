@@ -8,7 +8,7 @@
   <ion-list [inset]="true">
     <ion-item
       button
-      *ngFor="let data of employeeDataList"
+      *ngFor="let data of employeeDataList$ | async"
       (click)="displayEmployeeDetails(data)"
     >
       <ion-label>{{data.name}}</ion-label>
