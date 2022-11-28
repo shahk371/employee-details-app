@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DataService } from '../services//data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Employee } from '../models/employee.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-detail-view',
   templateUrl: './detail-view.page.html',
   styleUrls: ['./detail-view.page.scss'],
 })
-export class DetailViewPage implements OnInit {
+export class DetailViewPage implements OnInit, OnDestroy {
   currentEmployeeData: any = {};
+  employeeDataSubs: Subscription = new Subscription();
+  routeDataSubs: Subscription = new Subscription();
+
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute
@@ -32,5 +36,10 @@ export class DetailViewPage implements OnInit {
     this.route.params.subscribe((params: any) => {
       this.getEmployeeList(params);
     });
+  }
+
+  ngOnDestroy() {
+    this.employeeDataSubs.unsubscribe();
+    this.routeDataSubs.unsubscribe();
   }
 }
