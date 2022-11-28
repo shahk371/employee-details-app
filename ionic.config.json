@@ -1,7 +1,10 @@
 {
   "name": "employee-details-app",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
   },
   "type": "angular"
 }

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="list-view" text="Back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Employee Data</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card color="light">
+    <ion-item-divider> Personal Details</ion-item-divider>
+    <ion-item>Name: {{currentEmployeeData.name}}</ion-item>
+  </ion-card>
+
+  <ion-card color="light">
+    <ion-item-divider> Contact Details </ion-item-divider>
+    <ion-item>Phone No : {{currentEmployeeData.phone}}</ion-item>
+    <ion-item>Email: {{currentEmployeeData.email}}</ion-item>
+  </ion-card>
+
+  <ion-card color="light">
+    <ion-item-divider> Address Details </ion-item-divider>
+    <ion-item>Address: {{currentEmployeeData?.address?.street}}</ion-item>
+    <ion-item>City: {{currentEmployeeData?.address?.city}}</ion-item>
+    <ion-item>Pincode: {{currentEmployeeData?.address?.zipcode}}</ion-item>
+  </ion-card>
+
+  <ion-card color="light">
+    <ion-item-divider> Company Details </ion-item-divider>
+    <ion-item>Company Name: {{currentEmployeeData?.company?.name}}</ion-item>
+  </ion-card>
+</ion-content>
