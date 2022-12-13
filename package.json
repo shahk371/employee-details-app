@@ -19,9 +19,11 @@
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
+    "@awesome-cordova-plugins/splash-screen": "^6.2.0",
     "@ionic/angular": "^6.3.8",
     "@ionic/cordova-builders": "^7.0.0",
     "cordova": "^11.0.0",
+    "cordova-res": "^0.15.4",
     "ionic": "^5.4.16",
     "ionicons": "^6.0.3",
     "rxjs": "~7.5.0",
@@ -76,8 +78,8 @@
       "cordova-plugin-ionic-keyboard": {}
     },
     "platforms": [
-      "android",
-      "ios"
+      "ios",
+      "android"
     ]
   }
 }
